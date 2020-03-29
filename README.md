@@ -2,7 +2,7 @@
 
 ## Website CRUD menggunakan Rest Server dan Rest Client
 
-File ini dibuat dalam rangka memenuhi Ujian Tengah Semester 5 mata Pelajaran Pemrograman Website.
+File ini dibuat dalam rangka memenuhi Ujian Tengah Semester 4 mata Pelajaran Pemrograman Website.
 
 ### Nama kelompok dalam pengerjaan:
 1. Bella Setyowati - 1841720004
