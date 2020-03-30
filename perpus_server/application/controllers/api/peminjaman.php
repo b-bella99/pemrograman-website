@@ -33,7 +33,7 @@ class peminjaman extends REST_Controller
         } else {
             $this->response([
                 'status' => FALSE,
-                'message' => 'Tid_transaksiak Ditemukan Peminjaman'
+                'message' => 'id_transaksiak Ditemukan Peminjaman'
             ], REST_Controller::HTTP_NOT_FOUND);
         }
     }
@@ -41,8 +41,8 @@ class peminjaman extends REST_Controller
     public function index_post()
     {
         $data = [
-            'id_transaksi_peminjam' => $this->post('id_transaksi_peminjam'),
-            'id_transaksi_buku' => $this->post('id_transaksi_buku'),
+            'id_peminjam' => $this->post('id_peminjam'),
+            'id_buku' => $this->post('id_buku'),
             'tgl_pinjam' => $this->post('tgl_pinjam'),
             'tgl_kembali' => $this->post('tgl_kembali')
         ];
@@ -65,8 +65,8 @@ class peminjaman extends REST_Controller
     {
         $id_transaksi = $this->put('id_transaksi');
         $data = [
-            'id_transaksi_peminjam' => $this->put('id_transaksi_peminjam'),
-            'id_transaksi_buku' => $this->put('id_transaksi_buku'),
+            'id_peminjam' => $this->put('id_peminjam'),
+            'id_buku' => $this->put('id_buku'),
             'tgl_pinjam' => $this->put('tgl_pinjam'),
             'tgl_kembali' => $this->put('tgl_kembali')
 
