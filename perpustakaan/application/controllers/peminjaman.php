@@ -42,7 +42,7 @@ class peminjaman extends CI_Controller {
                 'tgl_pinjam' => $this->input->post('tgl_pinjam'),
                 'tgl_kembali' => $this->input->post('tgl_kembali')
             );
-            $insert = $this->curl->simple_post($this->API.'/peminjam', $data, array(CURLOPT_BUFFERSIZE => 10));
+            $insert = $this->curl->simple_post($this->API.'/peminjaman', $data, array(CURLOPT_BUFFERSIZE => 10));
             if ($insert) {
                 # code...
                 $this->session->set_flashdata('hasil', 'Pengisian Data Peminjaman Buku Berhasil!');
@@ -59,17 +59,17 @@ class peminjaman extends CI_Controller {
         }
     }
 
-    //fungsi edit data Peminjam
+    //fungsi edit data Peminjaman
     public function edit()
     {
         # code...
         if(isset($_POST['submit'])){
             $data = array(
                 'id_transaksi' => $this->input->post('id_transaksi',true),
-                'id_peminjam' => $this->input->post('id_peminjam'),
-                'id_buku' => $this->input->post('id_buku'),
-                'tgl_pinjam' => $this->input->post('tgl_pinjam'),
-                'tgl_kembali' => $this->input->post('tgl_kembali')
+                'id_peminjam' => $this->input->post('id_peminjam',true),
+                'id_buku' => $this->input->post('id_buku',true),
+                'tgl_pinjam' => $this->input->post('tgl_pinjam',true),
+                'tgl_kembali' => $this->input->post('tgl_kembali',true)
             );
             $update = $this->curl->simple_put($this->API.'/peminjaman', $data, array(CURLOPT_BUFFERSIZE => 10));
             if ($update) {
@@ -79,7 +79,7 @@ class peminjaman extends CI_Controller {
                 # code...
                 $this->session->set_flashdata('hasil', 'Pembaruan Data Peminjaman Buku Gagal!');
             }
-            redirect('peminjam');//ke controller Peminjam
+            redirect('peminjaman');//ke controller Peminjaman
         }else {
             $params = array('id_transaksi' => $this->uri->segment(3));
             $respon = json_decode($this->curl->simple_get($this->API.'/peminjaman',$params));
@@ -105,7 +105,7 @@ class peminjaman extends CI_Controller {
             }else {
                 $this->session->set_flashdata('hasil', 'Menghapus Data Peminjaman Buku Gagal!');
             }
-            redirect('Peminjam');
+            redirect('peminjaman');
         }
     }
 

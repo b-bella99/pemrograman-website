@@ -13,7 +13,7 @@
                 <table class="table table-bordered table-light" align="center">
                     <tr>
                         <td>ID Anggota</td>
-                        <td><?php echo form_input('buku',$datapeminjam[0]->id_peminjam,"disabled"); ?></td>
+                        <td><?php echo form_input('id_peminjam',$datapeminjam[0]->id_peminjam,"disabled"); ?></td>
                     </tr>
                     <tr>
                         <td>Nama Anggota</td>

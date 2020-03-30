@@ -9,8 +9,12 @@
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
             <?php echo form_open_multipart('peminjaman/edit'); ?>
-            <?php echo form_hidden('id_peminjam',$datapeminjaman[0]->id_transaksi); ?>
+            <?php echo form_hidden('id_transaksi',$datapeminjaman[0]->id_transaksi); ?>
                 <table class="table table-bordered table-light" align="center">
+                    <tr>
+                        <td>ID Peminjaman</td>
+                        <td><?php echo form_input('id_transaksi',$datapeminjaman[0]->id_transaksi,"disabled"); ?></td>
+                    </tr>
                     <tr>
                         <td>ID Anggota</td>
                         <td><?php echo form_input('id_peminjam',$datapeminjaman[0]->id_peminjam,"disabled"); ?></td>
